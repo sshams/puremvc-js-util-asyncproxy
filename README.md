@@ -1,5 +1,5 @@
 ## [PureMVC](http://puremvc.github.com/) JavaScript Async Proxy Utility
-PureMVC is a lightweight framework for creating applications based upon the classic [Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) design meta-pattern. This is an inspirtation from JavaScript port of the [AS3 reference implementation of the Async Stub Proxy Utility](https://github.com/PureMVC/puremvc-as3-util-asyncstub/wiki) and helps several asynchronous data related operations like WebSQL or AJAX in JavaScript. Asynchronous Proxies are to be used side by side with Asynchronous Commands or Asynchronous Macro Commands to sequence several asynchronous operations of JavaScript.
+PureMVC is a lightweight framework for creating applications based upon the classic [Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) design meta-pattern. This is an inspirtation from JavaScript port of the [AS3 reference implementation of the Async Stub Proxy Utility](https://github.com/PureMVC/puremvc-as3-util-asyncstub/wiki) to be used in conjunction with AsyncCommand or SimpleCommand to helps several asynchronous data related operations like WebSQL or AJAX in JavaScript.
 
 * [Discussion](http://forums.puremvc.org/index.php?board=66.0)
 
