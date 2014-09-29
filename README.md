@@ -4,7 +4,7 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 * [Discussion](http://forums.puremvc.org/index.php?board=66.0)
 
 ## Demos
-* [Demo: Async Sequentail](https://github.com/sshams/puremvc-js-demo-async-sequential)
+* [Demo: Async Sequential](https://github.com/sshams/puremvc-js-demo-async-sequential)
 
 ## Status
 Production - [Version 1.0](https://github.com/sshams/puremvc-js-demo-async-sequential/blob/master/VERSION)
