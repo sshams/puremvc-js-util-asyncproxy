@@ -28,44 +28,44 @@ AsyncProxy.prototype = new puremvc.Proxy;
 AsyncProxy.prototype.constructor = AsyncProxy;
 
 /**
- * To set callback values for result and fault. 
+ * To set responder and the token
  * @method asyncAction
- * @param {Function} resultFunction
- * @param {Function} faultFunction
+ * @param {Interface} responder
+ * @param {Object} token
  * @return 
  */
-AsyncProxy.prototype.asyncAction = function(resultFunction, faultFunction) {
+AsyncProxy.prototype.asyncAction = function(responder, token) {
     if(this.asyncInProgress) {
         throw new Error("AsyncProxy: Cannot have more than one async activity running per instance");
     }
 
-    this.clientResultFunction = resultFunction;
-    this.clientFaultFunction = faultFunction;
+    this.responder = responder;
+    this.token = token
     this.asyncInProgress = true;
 }
 
 /**
- * Callbacks clientResultFunction on success and passed any data as the params.
+ * Callbacks success and passed data and token
  * @method onResult
  * @param {Object} data
  * @return 
  */
 AsyncProxy.prototype.onResult = function(data) {
     this.asyncInProgress = false;
-    this.clientResultFunction(data);
+    this.responder.success(data, this.token);
 }
 
 /**
- * Callbacks clientFaultFunction on failure and passed any info as the params.
+ * Callbacks fail and passed data and token
  * @method onFault
  * @param {Object} info
  * @return 
  */
 AsyncProxy.prototype.onFault = function(info) {
     this.asyncInProgress = false;
-    this.clientFaultFunction(info);
+    this.responder.fail(info, this.token);
 }
 
-AsyncProxy.prototype.clientResultFunction = null;
-AsyncProxy.prototype.clientFaultFunction = null;
+AsyncProxy.prototype.responder = null;
+AsyncProxy.prototype.token = null
 AsyncProxy.prototype.asyncInProgress = false;
