@@ -80,4 +80,8 @@ AsyncProxy.prototype.responder = null;
 AsyncProxy.prototype.token = null
 AsyncProxy.prototype.asyncInProgress = false;
 
+    // define the puremvc global namespace and export the actors
+    scope.puremvc.asyncproxy = {};
+    scope.puremvc.asyncproxy.AsyncProxy = AsyncProxy;
+
 })(this); // the 'this' parameter will resolve to global scope in all environments
