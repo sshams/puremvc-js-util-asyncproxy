@@ -4,7 +4,6 @@
   Your reuse is governed by the Creative Commons Attribution 3.0 License
 */
 
-
 /**
  * 
  * <P>
@@ -50,9 +49,9 @@ AsyncProxy.prototype.asyncAction = function(responder, token) {
     }
 
     this.responder = responder;
-    this.token = token
+    this.token = token;
     this.asyncInProgress = true;
-}
+};
 
 /**
  * Callbacks success and passed data and token
@@ -62,8 +61,8 @@ AsyncProxy.prototype.asyncAction = function(responder, token) {
  */
 AsyncProxy.prototype.onResult = function(data) {
     this.asyncInProgress = false;
-    this.responder.success(data, this.token);
-}
+    this.responder.result(data, this.token);
+};
 
 /**
  * Callbacks fail and passed data and token
@@ -73,11 +72,11 @@ AsyncProxy.prototype.onResult = function(data) {
  */
 AsyncProxy.prototype.onFault = function(info) {
     this.asyncInProgress = false;
-    this.responder.fail(info, this.token);
-}
+    this.responder.fault(info, this.token);
+};
 
 AsyncProxy.prototype.responder = null;
-AsyncProxy.prototype.token = null
+AsyncProxy.prototype.token = null;
 AsyncProxy.prototype.asyncInProgress = false;
 
     // define the puremvc global namespace and export the actors

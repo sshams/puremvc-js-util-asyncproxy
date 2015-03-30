@@ -52,7 +52,7 @@ AsyncProxy.prototype.asyncAction = function(responder, token) {
  */
 AsyncProxy.prototype.onResult = function(data) {
     this.asyncInProgress = false;
-    this.responder.success(data, this.token);
+    this.responder.result(data, this.token);
 }
 
 /**
@@ -63,7 +63,7 @@ AsyncProxy.prototype.onResult = function(data) {
  */
 AsyncProxy.prototype.onFault = function(info) {
     this.asyncInProgress = false;
-    this.responder.fail(info, this.token);
+    this.responder.fault(info, this.token);
 }
 
 AsyncProxy.prototype.responder = null;
